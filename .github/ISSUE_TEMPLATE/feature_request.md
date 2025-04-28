@@ -6,8 +6,7 @@ labels: enhancement
 assignees: ''
 
 ---
-
-A clear and concise description of what AsciiDoc code should be reported by Vale rules. Include an explanation why and link to supporting documentation.
+Write a clear and concise description of what AsciiDoc code you would like the Vale rules to report. Explain why and link to supporting documentation if available.
 
 ```bash
 # Provide error or warning messages from the dita-topic extension, the

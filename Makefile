@@ -26,7 +26,7 @@
 SHELL     = /bin/sh
 
 # Important paths:
-SRCSDIR   = styles/AsciidoctorDITA
+SRCSDIR   = styles/AsciiDocDITA
 TESTDIR		= test
 SRCS     := $(wildcard $(SRCSDIR)/*.yml)
 TESTS    := $(wildcard $(TESTDIR)/*.bats)

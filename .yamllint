@@ -1,0 +1,5 @@
+# A custom yamllint configuration file for the AsciidoctorDITA Vale style
+
+extends: default
+rules:
+  line-length: disable

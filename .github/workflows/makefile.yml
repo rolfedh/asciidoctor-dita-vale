@@ -17,6 +17,9 @@ jobs:
     - name: Install bats and yamllint
       run: sudo apt install -y bats yamllint
 
+    - name: Install vale
+      run: sudo snap install vale
+
     - name: Ensure all Vale rules are valid YAML files
       run: make validate
 

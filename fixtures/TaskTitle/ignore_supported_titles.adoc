@@ -33,6 +33,10 @@ A paragraph.
 
 A paragraph.
 
+.Troubleshooting step
+
+A paragraph.
+
 .Troubleshooting steps
 
 A paragraph.

@@ -47,8 +47,7 @@ script: |
         continue
       } else if text.trim_space(line) != "" {
         matches = append(matches, {begin: start, end: start + end - 1})
-        break
       }
-      need_empty_line = false
+      break
     }
   }

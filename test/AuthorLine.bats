@@ -47,6 +47,12 @@ load test_helper
   [ "${lines[0]}" = "" ]
 }
 
+@test "Ignore subsequent level 0 sections" {
+  run run_vale "$BATS_TEST_FILENAME" ignore_second_title.adoc
+  [ "$status" -eq 0 ]
+  [ "${lines[0]}" = "" ]
+}
+
 @test "Report author lines only once" {
   run run_vale "$BATS_TEST_FILENAME" report_author_line.adoc
   [ "$status" -eq 0 ]

@@ -1,4 +1,4 @@
-Issue #NUMBER. If this pull request does not address an existing issue, write a clear and concise description of what the code changes accomplish and link to supporting documentation if available.
+Fixes issue #NUMBER. If this pull request does not address an existing issue, write a clear and concise description of what the code changes accomplish and link to supporting documentation if available.
 
 ### Implementation checklist
 

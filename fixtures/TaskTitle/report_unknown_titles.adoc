@@ -5,6 +5,8 @@
 
 A paragraph.
 
-.Unsupported title
+.First unsupported title
 
 A paragraph.
+
+.Second unsupported title

@@ -11,13 +11,15 @@ script: |
   r_comment_line    := text.re_compile("^(//|//[^/].*)$")
   r_comment_block   := text.re_compile("^/{4,}\\s*$")
   r_content_type    := text.re_compile("^:_(?:mod-docs-content|content|module)-type:[ \\t](?i:procedure)")
+  r_list_continue   := text.re_compile("^\\+[ \\t]*$")
   r_block_title     := text.re_compile("^\\.{1,2}[^ \\t.].*$")
-  r_supported_title := text.re_compile("^\\.{1,2}(?:Prerequisites?|Procedure|Verification|Results?|Troubleshooting|Troubleshooting steps?|Next steps?|Additional resources)$")
+  r_supported_title := text.re_compile("^\\.{1,2}(?:Prerequisites?|Procedure|Verification|Results?|Troubleshooting|Troubleshooting steps?|Next steps?|Additional resources)[ \\t]*$")
 
   document          := text.split(text.trim_suffix(scope, "\n"), "\n")
 
   in_comment_block  := false
   is_procedure      := false
+  is_list_continue  := false
   start             := 0
   end               := 0
   block_titles      := []
@@ -38,11 +40,20 @@ script: |
     if in_comment_block { continue }
     if r_comment_line.match(line) { continue }
 
+    if r_list_continue.match(line) {
+      is_list_continue = true
+      continue
+    }
+
     if r_content_type.match(line) {
       is_procedure = true
     } else if r_block_title.match(line) && ! r_supported_title.match(line) {
-      block_titles = append(block_titles, {begin: start, end: start + end - 1})
+      if ! is_list_continue {
+        block_titles = append(block_titles, {begin: start, end: start + end - 1})
+      }
     }
+
+    is_list_continue = false
   }
 
   if is_procedure && block_titles {

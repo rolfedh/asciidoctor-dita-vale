@@ -59,6 +59,12 @@ load test_helper
   [ "${lines[0]}" = "" ]
 }
 
+@test "Ignore nested block titles" {
+  run run_vale "$BATS_TEST_FILENAME" ignore_nested_titles.adoc
+  [ "$status" -eq 0 ]
+  [ "${lines[0]}" = "" ]
+}
+
 @test "Report block titles in procedures with deprecated _content-type" {
   run run_vale "$BATS_TEST_FILENAME" report_content_type.adoc
   [ "$status" -eq 0 ]

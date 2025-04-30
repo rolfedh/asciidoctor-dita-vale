@@ -47,6 +47,12 @@ load test_helper
   [ "${lines[0]}" = "" ]
 }
 
+@test "Ignore supported block titles with trailing spaces" {
+  run run_vale "$BATS_TEST_FILENAME" ignore_trailing_spaces.adoc
+  [ "$status" -eq 0 ]
+  [ "${lines[0]}" = "" ]
+}
+
 @test "Ignore steps that have similar syntax to block titles" {
   run run_vale "$BATS_TEST_FILENAME" ignore_steps.adoc
   [ "$status" -eq 0 ]

@@ -5,4 +5,4 @@ message: "The '_mod-docs-content-type' attribute definition is missing."
 level: warning
 scope: raw
 min: 1
-token: '^(?:.*[\n\r]|):_(?:mod-docs-content|content|module)-type:[ \t]+\S'
+token: '(?:^|[\n\r]):_(?:mod-docs-content|content|module)-type:[ \t]+\S'

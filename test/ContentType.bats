@@ -41,6 +41,12 @@ load test_helper
   [ "${lines[0]}" = "" ]
 }
 
+@test "Ignore files with _mod-docs-content-type after title" {
+  run run_vale "$BATS_TEST_FILENAME" ignore_preceding_content.adoc
+  [ "$status" -eq 0 ]
+  [ "${lines[0]}" = "" ]
+}
+
 @test "Report files with _mod-docs-content-type in line comment" {
   run run_vale "$BATS_TEST_FILENAME" report_comments.adoc
   [ "$status" -eq 0 ]

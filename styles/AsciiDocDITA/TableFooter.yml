@@ -7,5 +7,6 @@ scope: raw
 nonword: true
 tokens:
   - '^\[[^\]]*%footer[^\n\]]*?\]'
-  - '^\[[^\]]*options="[^"]*footer[^\n\]]*?\]'
-  - "^\\[[^\\]]*options='[^']*footer[^\\n\\]]*?\\]"
+  - '^\[[^\]]*options=footer\b[^\n\]]*?\]'
+  - '^\[[^\]]*options="[^"]*footer\b[^\n\]]*?\]'
+  - "^\\[[^\\]]*options='[^']*footer\\b[^\\n\\]]*?\\]"

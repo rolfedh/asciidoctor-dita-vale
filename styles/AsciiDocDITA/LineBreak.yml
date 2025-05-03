@@ -6,7 +6,8 @@ level: warning
 scope: raw
 nonword: true
 tokens:
-  - '^.* \+[ \t]*$'
+  - '^[^/]{2}.* \+[ \t]*$'
+  - '^. \+[ \t]*$'
   - '^:hardbreaks-option:(?:|.*?)[ \t]*$'
   - '^\[[^\]]*%hardbreaks[^\n\]]*?\]'
   - '^\[[^\]]*options=hardbreaks\b[^\n\]]*?\]'

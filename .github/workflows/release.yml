@@ -1,0 +1,20 @@
+name: GitHub Release
+
+on:
+  push:
+    tags: [ "v*" ]
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Build a Vale package
+      run: make package
+
+    - name: Create a GitHub release
+      env:
+        GITHUB_TOKEN: ${{ github.token }}
+      run: gh release create v$GITHUB_REF_NAME AsciiDocDITA.zip

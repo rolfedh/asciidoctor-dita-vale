@@ -1,8 +1,8 @@
 // Thematic break variations:
 
-A page.
-
----
+// NOTE: The Markdown-style thematic break that uses three consecutive
+// dashes is intentionally excluded as it is frequently used in YAML files:
+// ---
 
 A page.
 

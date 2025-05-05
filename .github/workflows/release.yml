@@ -17,4 +17,4 @@ jobs:
     - name: Create a GitHub release
       env:
         GITHUB_TOKEN: ${{ github.token }}
-      run: gh release create v$GITHUB_REF_NAME AsciiDocDITA.zip
+      run: gh release create $GITHUB_REF_NAME AsciiDocDITA.zip

@@ -24,24 +24,35 @@
 
 # Global settings:
 SHELL     = /bin/sh
+NAME      = AsciiDocDITA
 
 # Important paths:
-SRCSDIR   = styles/AsciiDocDITA
+STYLESDIR = styles
+SRCSDIR  := $(STYLESDIR)/$(NAME)
 TESTDIR		= test
 SRCS     := $(wildcard $(SRCSDIR)/*.yml)
 TESTS    := $(wildcard $(TESTDIR)/*.bats)
 LOGFILE   = CHANGELOG.md
+ZIPFILE  := $(NAME).zip
 
 # Command aliases:
 BATS      = \bats
 YAMLLINT  = \yamllint -s -f auto
 CHANGELOG = \git log --no-merges --pretty='{%D}* %s' | \sed -e 's/^{[^}]*tag: \([^},]\+\)[^}]*}/\n\#\# \1\n\n/;s/^{[^}]*}//;1i \# Changelog\n'
+ZIP       = \zip -r
 
 # Generate a changelog from revision history:
 .PHONY: changelog
 changelog:
 	@echo "Generating $(LOGFILE)..."
 	@$(CHANGELOG) > $(LOGFILE)
+	@echo "Done."
+
+# Prepare a Vale package:
+.PHONY: package
+package: $(SRCS)
+	@echo "Generating $(ZIPFILE)..."
+	@\cd $(STYLESDIR) && $(ZIP) $(ZIPFILE) . && \mv $(ZIPFILE) ..
 	@echo "Done."
 
 # Verify all Vale rules are valid YAML files:
@@ -63,4 +74,5 @@ test: $(TESTS)
 clean:
 	@echo "Removing generated files:"
 	-rm -f $(LOGFILE)
+	-rm -f $(ZIPFILE)
 	@echo "Done."

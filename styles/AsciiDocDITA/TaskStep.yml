@@ -54,7 +54,6 @@ script: |
 
     if r_attribute.match(line) { continue }
     if r_attribute_list.match(line) { continue }
-    if r_list_continue.match(line) { continue }
 
     if r_procedure.match(line) {
       in_procedure = true
@@ -81,16 +80,17 @@ script: |
     }
 
     if r_empty_line.match(line) {
-      if in_step {
-        in_step = false
-      }
+      in_step = false
+      continue
+    }
+
+    if r_list_continue.match(line) {
+      in_step = true
       continue
     }
 
     if r_step.match(line) {
-      if ! in_list {
-        in_list = true
-      }
+      in_list = true
       in_step = true
       continue
     }

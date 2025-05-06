@@ -10,8 +10,6 @@ script: |
 
   r_comment_line    := text.re_compile("^(//|//[^/].*)$")
   r_comment_block   := text.re_compile("^/{4,}\\s*$")
-  r_document_title  := text.re_compile("^=[ \\t]\\S.*$")
-
   r_any_title       := text.re_compile("^(?:={2,}[ \\t]+|\\.{1,2})\\S.*$")
   r_add_resources   := text.re_compile("^(?:={2,}[ \\t]+|\\.{1,2})Additional resources[ \\t]*$")
   r_link_macro      := text.re_compile("^[ \\t]*[\\*-][ \\t]+(?:link|mailto):(?:|[^: \\t\\[][^: \\t\\[]*)\\[.*?\\][ \\t]*$")

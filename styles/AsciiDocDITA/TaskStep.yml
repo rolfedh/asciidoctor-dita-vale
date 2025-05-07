@@ -28,6 +28,7 @@ script: |
   in_procedure      := false
   in_list           := false
   in_step           := false
+  in_continue       := false
   start             := 0
   end               := 0
 
@@ -80,13 +81,18 @@ script: |
     }
 
     if r_empty_line.match(line) {
-      in_step = false
+      if ! in_continue {
+        in_step = false
+      }
       continue
     }
 
     if r_list_continue.match(line) {
+      in_continue = true
       in_step = true
       continue
+    } else {
+      in_continue = false
     }
 
     if r_step.match(line) {

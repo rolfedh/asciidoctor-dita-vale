@@ -22,3 +22,19 @@ A false paragraph.
 . A valid step.
 
 .. A valid substep.
+
+. A valid step.
++
+
+A continued step.
+
+. A valid step.
+
++
+A continued step.
+
+. A valid step.
+
++
+
+A continued step.

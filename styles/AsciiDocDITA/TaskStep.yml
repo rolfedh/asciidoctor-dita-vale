@@ -17,6 +17,7 @@ script: |
   r_step            := text.re_compile("^[ \\t]*[\\*-.]+[ \\t]+\\S.*$")
   r_attribute       := text.re_compile("^:!?\\S[^:]*:")
   r_attribute_list  := text.re_compile("^\\[(?:|[\\w.#%{,\"'].*)\\][ \\t]*$")
+  r_conditional     := text.re_compile("^(?:ifn?def|ifeval|endif)::\\S*\\[.*\\][ \\t]*$")
   r_empty_line      := text.re_compile("^[ \\t]*$")
   r_list_continue   := text.re_compile("^\\+[ \\t]*$")
 
@@ -55,6 +56,7 @@ script: |
 
     if r_attribute.match(line) { continue }
     if r_attribute_list.match(line) { continue }
+    if r_conditional.match(line) { continue }
 
     if r_procedure.match(line) {
       in_procedure = true

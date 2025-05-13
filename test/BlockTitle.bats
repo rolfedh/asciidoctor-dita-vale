@@ -18,6 +18,12 @@ load test_helper
   [ "${lines[0]}" = "" ]
 }
 
+@test "Ignore additional resources in all modules" {
+  run run_vale "$BATS_TEST_FILENAME" ignore_additional_resources.adoc
+  [ "$status" -eq 0 ]
+  [ "${lines[0]}" = "" ]
+}
+
 @test "Ignore supported block titles" {
   run run_vale "$BATS_TEST_FILENAME" ignore_block_titles.adoc
   [ "$status" -eq 0 ]

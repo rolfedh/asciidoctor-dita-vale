@@ -1,0 +1,8 @@
+// An admonition that uses the same block syntax:
+
+== Section title
+
+[NOTE]
+====
+A valid admonition.
+====

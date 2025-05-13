@@ -12,7 +12,8 @@ script: |
   r_comment_block   := text.re_compile("^/{4,}\\s*$")
   r_content_type    := text.re_compile("^:_(?:mod-docs-content|content|module)-type:[ \\t](?i:procedure)")
   r_block_title     := text.re_compile("^\\.{1,2}[^ \\t.].*$")
-  r_supported_title := text.re_compile("^\\.{1,2}(?:Prerequisites?|Procedure|Verification|Results?|Troubleshooting|Troubleshooting steps?|Next steps?|Additional resources)[ \\t]*$")
+  r_supported_title := text.re_compile("^\\.{1,2}(?:Prerequisites?|Procedure|Verification|Results?|Troubleshooting|Troubleshooting steps?|Next steps?)[ \\t]*$")
+  r_add_resources   := text.re_compile("^\\.{1,2}Additional resources[ \\t]*$")
   r_example_block   := text.re_compile("^\\[example\\][ \\t]*$")
   r_example_delim   := text.re_compile("^={4,}[ \\t]*$")
   r_image           := text.re_compile("^image::(?:\\S|\\S.*\\S)\\[.*\\][ \\t]*$")
@@ -58,6 +59,7 @@ script: |
 
     if r_block_title.match(line) {
       if is_procedure && r_supported_title.match(line) { continue }
+      if r_add_resources.match(line) { continue }
 
       expect_block = {begin: start, end: start + end -1}
       continue

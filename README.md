@@ -27,11 +27,14 @@ In combination with [asciidoctor-dita-topic](https://github.com/jhradilek/asciid
 
     ```ini
     StylesPath = .vale/styles
-    MinAlertLevel = warning
+    inAlertLevel = suggestion
     Packages = https://github.com/jhradilek/asciidoctor-dita-vale/releases/latest/download/AsciiDocDITA.zip
 
     [*.adoc]
     BasedOnStyles = AsciiDocDITA
+
+    # Disable selected rules:
+    AsciiDocDITA.ShortDescription = NO
     ```
 3.  Download and install the `AsciiDocDITA` package:
 

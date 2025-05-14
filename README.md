@@ -54,7 +54,7 @@ In combination with [asciidoctor-dita-topic](https://github.com/jhradilek/asciid
     ```console
     $ vale .
     ```
-*   Read the [the official documentation](https://vale.sh/docs/install) to learn how to use Vale in and editor such as VSCode, Neovim, or Emacs, or run it as a GitHub action.
+*   Read [the official documentation](https://vale.sh/docs/install) to learn how to use Vale in an editor such as VSCode, Neovim, or Emacs, or run it as a GitHub action.
 
 ## Copyright
 

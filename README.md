@@ -27,14 +27,11 @@ In combination with [asciidoctor-dita-topic](https://github.com/jhradilek/asciid
 
     ```ini
     StylesPath = .vale/styles
-    inAlertLevel = suggestion
+    MinAlertLevel = warning
     Packages = https://github.com/jhradilek/asciidoctor-dita-vale/releases/latest/download/AsciiDocDITA.zip
 
     [*.adoc]
     BasedOnStyles = AsciiDocDITA
-
-    # Disable selected rules:
-    AsciiDocDITA.ShortDescription = NO
     ```
 3.  Download and install the `AsciiDocDITA` package:
 
@@ -53,6 +50,11 @@ In combination with [asciidoctor-dita-topic](https://github.com/jhradilek/asciid
 
     ```console
     $ vale .
+    ```
+*   To list suggestions that are normally diabled by setting the `MinAlertLevel` option to `warning` in the configuration, run the following command:
+
+    ```console
+    $ vale --filter '.Level=="suggestion"' .
     ```
 *   Read [the official documentation](https://vale.sh/docs/install) to learn how to use Vale in an editor such as VSCode, Neovim, or Emacs, or run it as a GitHub action.
 

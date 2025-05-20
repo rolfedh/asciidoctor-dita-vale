@@ -59,10 +59,14 @@ script: |
     if r_example_delim.match(line) {
       delimiter := text.trim_space(line)
       if ! in_example_block {
-        count++
         in_example_block = delimiter
 
-        if expect_admonition { continue }
+        if expect_admonition {
+          expect_admonition = false
+          continue
+        }
+
+        count++
 
         if count > 1 {
           matches = append(matches, {begin: start, end: start + end - 1})

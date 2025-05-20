@@ -1,0 +1,14 @@
+// Admonitions that use the same block syntax:
+:_mod-docs-content-type: PROCEDURE
+
+[NOTE]
+====
+An admonition.
+====
+
+[NOTE]
+An admonition.
+
+====
+A supported example.
+====

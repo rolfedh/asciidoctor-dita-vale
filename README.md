@@ -2,24 +2,6 @@
 
 **AsciiDocDITA** is a style package for [Vale](https://vale.sh/) that allows you to validate your AsciiDoc content and identify markup that does not have a direct equivalent in DITA 1.3.
 
-In combination with [asciidoctor-dita-topic](https://github.com/jhradilek/asciidoctor-dita-topic) and [dita-convert](https://github.com/jhradilek/dita-custom-xslt), this project can be used to rapidly convert AsciiDoc content to DITA:
-
-1.  Identify incompatible markup in the AsciiDoc source file:
-
-    ```console
-    $ vale source_file.adoc
-    ```
-2.  Convert the AsciiDoc file to a generic DITA topic:
-
-    ```console
-    $ asciidoctor -r dita-topic -b dita-topic source_file.adoc
-    ```
-3.  Convert the generic DITA topic to a specialized DITA concept, reference, or task:
-
-    ```console
-    $ dita-convert -gt task source_file.dita
-    ```
-
 ## Installation
 
 1.  Install the latest available version of Vale as described in [the official documentation](https://vale.sh/docs/install).

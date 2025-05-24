@@ -7,4 +7,4 @@ scope: raw
 nonword: true
 tokens:
   - 'xref:[A-Za-z0-9/.:{].*?(?<!\.adoc#?.*?)\[.*?\]'
-  - '<<[A-Za-z0-9/.:{].*?(?<!\.adoc#?.*?)>>'
+  - '<<[A-Za-z0-9/.:{].*?>>'

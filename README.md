@@ -14,6 +14,9 @@
 
     [*.adoc]
     BasedOnStyles = AsciiDocDITA
+
+    # Disable certain rules:
+    AsciiDocDITA.ShortDescription = NO
     ```
 3.  Download and install the `AsciiDocDITA` package:
 

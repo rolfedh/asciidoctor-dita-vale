@@ -22,7 +22,6 @@ script: |
   is_list_continue  := false
   start             := 0
   end               := 0
-  block_titles      := []
 
   for line in document {
     start += end
@@ -49,13 +48,13 @@ script: |
       is_procedure = true
     } else if r_block_title.match(line) && ! r_supported_title.match(line) {
       if ! is_list_continue {
-        block_titles = append(block_titles, {begin: start, end: start + end - 1})
+        matches = append(matches, {begin: start, end: start + end - 1})
       }
     }
 
     is_list_continue = false
   }
 
-  if is_procedure && block_titles {
-    matches = block_titles
+  if ! is_procedure {
+    matches = []
   }

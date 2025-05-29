@@ -19,7 +19,6 @@ script: |
   is_procedure      := false
   start             := 0
   end               := 0
-  sections          := []
 
   for line in document {
     start += end
@@ -40,10 +39,10 @@ script: |
     if r_content_type.match(line) {
       is_procedure = true
     } else if r_section.match(line) {
-      sections = append(sections, {begin: start, end: start + end - 1})
+      matches = append(matches, {begin: start, end: start + end - 1})
     }
   }
 
-  if is_procedure && sections {
-    matches = sections
+  if ! is_procedure {
+    matches = []
   }

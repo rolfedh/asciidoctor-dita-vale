@@ -3,7 +3,7 @@
 ---
 extends: occurrence
 message: "Assign [role=\"_abstract\"] to a paragraph to use it as <shortdesc> in DITA."
-level: suggestion
+level: warning
 scope: raw
 min: 1
 token: '(?:^|[\n\r])\[role="_abstract"\]'

@@ -89,6 +89,7 @@ The following rules have their severity set to `suggestion`. These are convenien
 | --- | --- |
 | AttributeReference | Lists all [attribute references](https://docs.asciidoctor.org/asciidoc/latest/attributes/reference-attributes/) in the file. Use this information to decide which attribute definitions to supply during conversion. |
 | ConditionalCode | Lists all `ifdef`, `ifndef`, and `ifeval` [conditional statements](https://docs.asciidoctor.org/asciidoc/latest/directives/conditionals/) in the file. Use this information to decide which attribute definitions to supply during conversion. |
+| IncludeDirective | Lists all [include directives](https://docs.asciidoctor.org/asciidoc/latest/directives/include/) in the file. Use this information to decide if include directives should be processed during conversion. |
 | ShortDescription | Suggest assigning `[role="_abstract"]` to a paragraph you want to convert to the `<shortdesc>` element in DITA. |
 
 ## Copyright

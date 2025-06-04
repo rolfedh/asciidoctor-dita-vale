@@ -6,6 +6,12 @@ load test_helper
   [ "${lines[0]}" = "" ]
 }
 
+@test "Ignore example blocks inside of code blocks" {
+  run run_vale "$BATS_TEST_FILENAME" ignore_code_blocks.adoc
+  [ "$status" -eq 0 ]
+  [ "${lines[0]}" = "" ]
+}
+
 @test "Ignore admonitions that use the same delimiter as example blocks" {
   run run_vale "$BATS_TEST_FILENAME" ignore_admonitions.adoc
   [ "$status" -eq 0 ]

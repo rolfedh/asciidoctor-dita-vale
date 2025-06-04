@@ -1,5 +1,4 @@
 // An admonition that uses the same block syntax:
-
 == Section title
 
 [NOTE]

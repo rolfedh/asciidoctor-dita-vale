@@ -61,6 +61,7 @@ script: |
       in_continue = false
       continue
     }
+    if in_code_block { continue }
 
     if r_attribute.match(line) { continue }
     if r_conditional.match(line) { continue }

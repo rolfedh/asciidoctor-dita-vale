@@ -3,5 +3,65 @@
 
 [NOTE]
 ====
-A valid admonition.
+An admonition.
+====
+
+[TIP]
+====
+An admonition.
+====
+
+[IMPORTANT]
+====
+An admonition.
+====
+
+[WARNING]
+====
+An admonition.
+====
+
+[CAUTION]
+====
+An admonition.
+====
+
+.An admonition title
+[NOTE]
+====
+An admonition.
+====
+
+[NOTE]
+.An admonition title
+====
+An admonition.
+====
+
+[NOTE]
+
+
+====
+An admonition.
+====
+
+. A step.
++
+[NOTE]
++
+====
+An admonition.
+====
+
+. A step.
+
++
+
+[NOTE]
+
+
++
+
+====
+An admonition.
 ====

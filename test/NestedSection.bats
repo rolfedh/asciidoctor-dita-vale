@@ -20,7 +20,7 @@ load test_helper
 
 @test "Report unsupported sections" {
   run run_vale "$BATS_TEST_FILENAME" report_nested_section.adoc
-  [ "$status" -eq 0 ]
+  [ "$status" -ne 0 ]
   [ "${#lines[@]}" -eq 4 ]
   [ "${lines[0]}" = "report_nested_section.adoc:2:1:AsciiDocDITA.NestedSection:Level 2, 3, 4, and 5 sections are not supported in DITA." ]
   [ "${lines[1]}" = "report_nested_section.adoc:5:1:AsciiDocDITA.NestedSection:Level 2, 3, 4, and 5 sections are not supported in DITA." ]

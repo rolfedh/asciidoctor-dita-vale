@@ -24,6 +24,12 @@ load test_helper
   [ "${lines[0]}" = "" ]
 }
 
+@test "Ignore block titles for examples, images, and tables" {
+  run run_vale "$BATS_TEST_FILENAME" ignore_examples_images_tables.adoc
+  [ "$status" -eq 0 ]
+  [ "${lines[0]}" = "" ]
+}
+
 @test "Ignore supported block titles with trailing spaces" {
   run run_vale "$BATS_TEST_FILENAME" ignore_trailing_spaces.adoc
   [ "$status" -eq 0 ]

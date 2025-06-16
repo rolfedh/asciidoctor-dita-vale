@@ -41,6 +41,14 @@
     ```console
     $ vale --filter '.Level=="suggestion"' .
     ```
+*   To generate a report with each message on an individual line, run the following command:
+
+    ```console
+    $ vale --output line .
+    ```
+
+    To import this report to a spreadsheet, make sure suggestions are disabled and select a colon (`:`) as a separator.
+
 *   Read [the official documentation](https://vale.sh/docs/install) to learn how to use Vale in an editor such as VSCode, Neovim, or Emacs, or run it as a GitHub action.
 
 ## Available rules
